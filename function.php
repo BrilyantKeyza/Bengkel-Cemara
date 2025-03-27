@@ -165,10 +165,33 @@ if (isset($_POST['updatebarang'])) {
 
     $update = mysqli_query($conn, "update stockbarang set namabarang='$namabarang', deskripsi='$deskripsi', kode='$kode' where id_barang = '$idb'");
     if ($update) {
-        header('location:stock.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "stock.php";
+            });
+        });
+    </script>';
     } else {
-        echo 'gagal';
-        header('location:stock.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "stock.php";
+            });
+        });
+    </script>';
     }
 }
 
@@ -178,10 +201,33 @@ if (isset($_POST['hapusbarang'])) {
 
     $hapus = mysqli_query($conn, "delete from stockbarang where id_barang='$idb'");
     if ($hapus) {
-        header('location:stock.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil dihapus",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "stock.php";
+            });
+        });
+    </script>';
     } else {
-        echo 'gagal';
-        header('location:stock.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal dihapus",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "stock.php";
+            });
+        });
+    </script>';
     }
 };
 
@@ -211,10 +257,33 @@ if (isset($_POST['updatebarangmasuk'])) {
         $kuranginstock = mysqli_query($conn, "update stockbarang set stock='$kurangin' where id_barang='$idb'");
         $updatenya = mysqli_query($conn, "update barangmasuk set qty='$qty', keterangan='$deskripsi' where id_masuk='$idm'");
         if ($kuranginstock && $updatenya) {
-            header('location:masuk.php');
+            echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "masuk.php";
+            });
+        });
+    </script>';
         } else {
-            echo 'gagal';
-            header('location:masuk.php');
+            echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "masuk.php";
+            });
+        });
+    </script>';
         }
     } else {
         $selisih = $qtynow - $qty;
@@ -248,10 +317,33 @@ if (isset($_POST['hapusbarangmasuk'])) {
     $hapusdata = mysqli_query($conn, "delete from barangmasuk where id_masuk='$idm'");
 
     if ($update && $hapusdata) {
-        header('location:masuk.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil dihapus",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "masuk.php";
+            });
+        });
+    </script>';
     } else {
-        echo 'gagal';
-        header('location:masuk.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal dihapus",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "masuk.php";
+            });
+        });
+    </script>';
     }
 }
 
@@ -281,10 +373,33 @@ if (isset($_POST['updatebarangkeluar'])) {
         $kuranginstock = mysqli_query($conn, "update stockbarang set stock='$kurangin' where id_barang='$idb'");
         $updatenya = mysqli_query($conn, "update barangkeluar set qty='$qty', penerima='$penerima' where id_keluar='$idk'");
         if ($kuranginstock && $updatenya) {
-            header('location:keluar.php');
+            echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "keluar.php";
+            });
+        });
+    </script>';
         } else {
-            echo 'gagal';
-            header('location:keluar.php');
+            echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "masuk.php";
+            });
+        });
+    </script>';
         }
     } else {
         $selisih = $qtynow - $qty;
@@ -318,9 +433,32 @@ if (isset($_POST['hapusbarangkeluar'])) {
     $hapusdata = mysqli_query($conn, "delete from barangkeluar where id_keluar='$idk'");
 
     if ($update && $hapusdata) {
-        header('location:keluar.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil dihapus",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "keluar.php";
+            });
+        });
+    </script>';
     } else {
-        echo 'gagal';
-        header('location:keluar.php');
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal dihapus",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "keluar.php";
+            });
+        });
+    </script>';
     }
 }

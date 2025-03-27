@@ -21,7 +21,20 @@ $result = mysqli_query($conn, $queryJumlahDataKeluar);
 $row = mysqli_fetch_assoc($result);
 $jumlahDataKeluar = $row['total_data_keluar'];
 
+// Query untuk mengambil data dari ketiga tabel dengan format seragam
+$query = "
+    SELECT 'Barang Masuk' AS aktivitas, m.tanggal, s.namabarang, m.qty AS jumlah, m.keterangan AS detail
+    FROM barangmasuk m
+    JOIN stockbarang s ON s.id_barang = m.id_barang
+    UNION
+    SELECT 'Barang Keluar' AS aktivitas, k.tanggal, s.namabarang, k.qty AS jumlah, k.penerima AS detail
+    FROM barangkeluar k
+    JOIN stockbarang s ON s.id_barang = k.id_barang
+    ORDER BY tanggal DESC
+    LIMIT 10
+";
 
+$ambildata = mysqli_query($conn, $query);
 
 ?>
 <!DOCTYPE html>
@@ -43,10 +56,10 @@ $jumlahDataKeluar = $row['total_data_keluar'];
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.php">
-        <i class="fa-solid fa-screwdriver-wrench"></i> Cemara Admin
+            Cemara Admin
         </a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fa-solid fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fa-solid fa-bars-staggered"></i></button>
         <!-- Navbar-->
         <ul class="navbar-nav d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <li class="nav-item dropdown">
@@ -58,7 +71,7 @@ $jumlahDataKeluar = $row['total_data_keluar'];
         </ul>
     </nav>
     <div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
+        <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
@@ -135,15 +148,50 @@ $jumlahDataKeluar = $row['total_data_keluar'];
                             </div>
                         </div>
                     </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Aktivitas (Barang Masuk/Keluar)
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Aktivitas</th>
+                                        <th>Nama Barang</th>
+                                        <th>Jumlah</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    while ($data = mysqli_fetch_array($ambildata)) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $data['tanggal']; ?></td>
+                                            <td><?= $data['aktivitas']; ?></td>
+                                            <td><?= $data['namabarang']; ?></td>
+                                            <td><?= $data['jumlah']; ?></td>
+                                            <td><?= $data['detail']; ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
                 </div>
+
             </main>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
 </body>
