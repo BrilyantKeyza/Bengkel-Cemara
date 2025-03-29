@@ -12,7 +12,7 @@ require 'cek.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Barang</title>
+    <title>Stock Barang</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -104,6 +104,7 @@ require 'cek.php';
                                         <th>Deskripsi</th>
                                         <th>Kode</th>
                                         <th>Stock</th>
+                                        <th>Harga Satuan</th>
                                         <th>Aksi</th>
 
                                     </tr>
@@ -118,6 +119,7 @@ require 'cek.php';
                                         $deskripsi = $data['deskripsi'];
                                         $kode = $data['kode'];
                                         $stock = $data['stock'];
+                                        $harga = $data['harga'];
                                         $idb = $data['id_barang'];
 
                                     ?>
@@ -127,6 +129,9 @@ require 'cek.php';
                                             <td><?= $deskripsi; ?></td>
                                             <td><?= $kode; ?></td>
                                             <td><?= $stock; ?></td>
+                                            
+                                            <td><?= "Rp " . number_format($harga, 0, ',', '.'); ?></td>
+
                                             <td>
                                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<?= $idb; ?>">
                                                     Edit
@@ -157,6 +162,8 @@ require 'cek.php';
                                                             <input type="text" name="deskripsi" value="<?= $deskripsi; ?>" class="form-control" required>
                                                             <br>
                                                             <input type="number" name="kode" value="<?= $kode; ?>" class="form-control" required>
+                                                            <br>
+                                                            <input type="number" name="harga" value="<?= $harga; ?>" class="form-control" required>
                                                             <br>
                                                             <input type="hidden" name="idb" value="<?= $idb; ?>">
                                                             <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
@@ -232,6 +239,8 @@ require 'cek.php';
                     <input type="number" name="kode" placeholder="Kode" class="form-control" required>
                     <br>
                     <input type="number" name="stock" placeholder="Stock" class="form-control" required>
+                    <br>
+                    <input type="number" name="harga" placeholder="Harga Satuan" class="form-control" required>
                     <br>
                     <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
                 </div>

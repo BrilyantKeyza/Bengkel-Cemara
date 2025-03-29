@@ -11,8 +11,9 @@ if (isset($_POST['tambahbarangbaru'])) {
     $deskripsi = $_POST['deskripsi'];
     $kode = $_POST['kode'];
     $stock = $_POST['stock'];
+    $harga = $_POST['harga'];
 
-    $addtotable = mysqli_query($conn, "INSERT INTO stockbarang (namabarang, deskripsi, kode, stock) VALUES('$namabarang', '$deskripsi', '$kode', '$stock')");
+    $addtotable = mysqli_query($conn, "INSERT INTO stockbarang (namabarang, deskripsi, kode, stock, harga) VALUES('$namabarang', '$deskripsi', '$kode', '$stock', '$harga')");
 
     if ($addtotable) {
         echo '<script>
@@ -162,8 +163,9 @@ if (isset($_POST['updatebarang'])) {
     $namabarang = $_POST['namabarang'];
     $deskripsi = $_POST['deskripsi'];
     $kode = $_POST['kode'];
+    $harga = $_POST['harga'];
 
-    $update = mysqli_query($conn, "update stockbarang set namabarang='$namabarang', deskripsi='$deskripsi', kode='$kode' where id_barang = '$idb'");
+    $update = mysqli_query($conn, "update stockbarang set namabarang='$namabarang', deskripsi='$deskripsi', kode='$kode', harga='$harga' where id_barang = '$idb'");
     if ($update) {
         echo '<script>
         document.addEventListener("DOMContentLoaded", function() {
