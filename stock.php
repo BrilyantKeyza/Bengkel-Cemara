@@ -22,7 +22,7 @@ require 'cek.php';
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="stock.php">
-        Cemara Admin
+            Cemara Admin
         </a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fa-solid fa-bars-staggered"></i></button>
@@ -68,6 +68,7 @@ require 'cek.php';
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Stock Barang</h1>
                     <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                         <li class="breadcrumb-item active">Stock Barang</li>
                     </ol>
 
@@ -129,7 +130,7 @@ require 'cek.php';
                                             <td><?= $deskripsi; ?></td>
                                             <td><?= $kode; ?></td>
                                             <td><?= $stock; ?></td>
-                                            
+
                                             <td><?= "Rp " . number_format($harga, 0, ',', '.'); ?></td>
 
                                             <td>
@@ -154,19 +155,35 @@ require 'cek.php';
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                     </div>
 
-                                                    <!-- Modal body -->
+                                                    <!-- Modal Body -->
                                                     <form method="post">
-                                                        <div class="modal-body">
-                                                            <input type="text" name="namabarang" value="<?= $namabarang; ?>" class="form-control" required>
-                                                            <br>
-                                                            <input type="text" name="deskripsi" value="<?= $deskripsi; ?>" class="form-control" required>
-                                                            <br>
-                                                            <input type="number" name="kode" value="<?= $kode; ?>" class="form-control" required>
-                                                            <br>
-                                                            <input type="number" name="harga" value="<?= $harga; ?>" class="form-control" required>
-                                                            <br>
+                                                        <div class="modal-body p-3 pt-0">
+                                                            <div class="form-floating mb-3">
+                                                                <input type="text" class="form-control" id="inputNamaBarang" name="namabarang" value="<?= $namabarang; ?>" placeholder="Nama Barang" required>
+                                                                <label for="inputNamaBarang">Nama Barang</label>
+                                                            </div>
+
+                                                            <div class="form-floating mb-3">
+                                                                <input type="text" class="form-control" id="inputDeskripsi" name="deskripsi" value="<?= $deskripsi; ?>" placeholder="Deskripsi" required>
+                                                                <label for="inputDeskripsi">Deskripsi</label>
+                                                            </div>
+
+                                                            <div class="form-floating mb-3">
+                                                                <input type="number" class="form-control" id="inputKode" name="kode" value="<?= $kode; ?>" placeholder="Kode" required>
+                                                                <label for="inputKode">Kode</label>
+                                                            </div>
+
+                                                            <div class="form-floating mb-3">
+                                                                <input type="number" class="form-control" id="inputHarga" name="harga" value="<?= $harga; ?>" placeholder="Harga Satuan" required>
+                                                                <label for="inputHarga">Harga Satuan</label>
+                                                            </div>
+
                                                             <input type="hidden" name="idb" value="<?= $idb; ?>">
-                                                            <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
+                                                            <div class="d-flex justify-content-end">
+                                                                <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Batal</button>
+                                                                <button type="submit" class="btn btn-primary" name="updatebarang">Edit</button>
+                                                            </div>
+                                                            
                                                         </div>
                                                     </form>
                                                 </div>
@@ -188,11 +205,13 @@ require 'cek.php';
                                                     <!-- Modal body -->
                                                     <form method="post">
                                                         <div class="modal-body">
-                                                            Apakah anda yakin ingin mengapus <?= $namabarang; ?> ?
-                                                            <br>
-                                                            <br>
+                                                            <p class="mb-3">Apakah kamu yakin ingin menghapus <strong><?= $namabarang; ?></strong>?</p>
                                                             <input type="hidden" name="idb" value="<?= $idb; ?>">
-                                                            <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+
+                                                            <div class="d-flex justify-content-end">
+                                                                <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Batal</button>
+                                                                <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+                                                            </div>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -232,17 +251,34 @@ require 'cek.php';
             <!-- Modal body -->
             <form method="post">
                 <div class="modal-body">
-                    <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
-                    <br>
-                    <input type="text" name="deskripsi" placeholder="Deskripsi" class="form-control" required>
-                    <br>
-                    <input type="number" name="kode" placeholder="Kode" class="form-control" required>
-                    <br>
-                    <input type="number" name="stock" placeholder="Stock" class="form-control" required>
-                    <br>
-                    <input type="number" name="harga" placeholder="Harga Satuan" class="form-control" required>
-                    <br>
-                    <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inputNamaBarang" name="namabarang" placeholder="Nama Barang" required>
+                        <label for="inputNamaBarang">Nama Barang</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inputDeskripsi" name="deskripsi" placeholder="Deskripsi" required>
+                        <label for="inputDeskripsi">Deskripsi</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="inputKode" name="kode" placeholder="Kode" required>
+                        <label for="inputKode">Kode</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="inputStock" name="stock" placeholder="Stock" required>
+                        <label for="inputStock">Stock</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="inputHarga" name="harga" placeholder="Harga Satuan" required>
+                        <label for="inputHarga">Harga Satuan</label>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Tambah</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -114,7 +114,7 @@ if (isset($_POST['tambahbarangkeluar'])) {
                     Swal.fire({
                         icon: "success",
                         title: "Berhasil!",
-                        text: "Barang berhasil dikeluarkan",
+                        text: "Stok berhasil dikurangi!",
                         confirmButtonText: "OK",
                         confirmButtonColor: "#0d6efd"
                     }).then(() => {
@@ -128,7 +128,7 @@ if (isset($_POST['tambahbarangkeluar'])) {
                     Swal.fire({
                         icon: "error",
                         title: "Gagal!",
-                        text: "Terjadi kesalahan, coba lagi!",
+                        text: "Stok gagal dikurangi!",
                         confirmButtonText: "OK",
                         confirmButtonColor: "#dc3545"
                     }).then(() => {
@@ -293,10 +293,33 @@ if (isset($_POST['updatebarangmasuk'])) {
         $kuranginstock = mysqli_query($conn, "update stockbarang set stock='$kurangin'where id_barang='$idb'");
         $updatenya = mysqli_query($conn, "update barangmasuk set qty='$qty', keterangan='$deskripsi' where id_masuk='$idm'");
         if ($kuranginstock && $updatenya) {
-            header('location:masuk.php');
+            echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    text: "Barang berhasil diedit",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "#0d6efd"
+                }).then(() => {
+                    window.location.href = "masuk.php";
+                });
+            });
+        </script>';
         } else {
-            echo 'gagal';
-            header('location:masuk.php');
+            echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Barang gagal diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#dc3545"
+            }).then(() => {
+                window.location.href = "masuk.php";
+            });
+        });
+    </script>';
         }
     }
 }
@@ -409,10 +432,33 @@ if (isset($_POST['updatebarangkeluar'])) {
         $kuranginstock = mysqli_query($conn, "update stockbarang set stock='$kurangin' where id_barang='$idb'");
         $updatenya = mysqli_query($conn, "update barangkeluar set qty='$qty', penerima='$penerima' where id_keluar='$idk'");
         if ($kuranginstock && $updatenya) {
-            header('location:keluar.php');
+            echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Barang berhasil diedit",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#0d6efd"
+            }).then(() => {
+                window.location.href = "keluar.php";
+            });
+        });
+    </script>';
         } else {
-            echo 'gagal';
-            header('location:keluar.php');
+            echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: "error",
+                    title: "Gagal!",
+                    text: "Barang gagal diedit",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "#dc3545"
+                }).then(() => {
+                    window.location.href = "masuk.php";
+                });
+            });
+        </script>';
         }
     }
 }
