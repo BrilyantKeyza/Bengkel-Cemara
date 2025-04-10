@@ -66,10 +66,10 @@ require 'cek.php';
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Stock Barang</h1>
+                    <h1 class="mt-4">Stok Barang</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Stock Barang</li>
+                        <li class="breadcrumb-item active">Stok Barang</li>
                     </ol>
 
                     <div class="card mb-4">
@@ -82,7 +82,7 @@ require 'cek.php';
                         <div class="card-body">
 
                             <?php
-                            $ambildatastock = mysqli_query($conn, "select * from stockbarang where stock < 1");
+                            $ambildatastock = mysqli_query($conn, "select * from stockbarang where stock < 5");
 
                             while ($fetch = mysqli_fetch_array($ambildatastock)) {
                                 $barang = $fetch['namabarang'];
@@ -90,7 +90,7 @@ require 'cek.php';
                                 <!-- Alert -->
                                 <div class="alert alert-danger alert-dismissible fade show">
                                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                    <strong>Peringatan!</strong> Stock Barang <?= $barang; ?> Habis
+                                    <strong>Peringatan!</strong> Stok Barang <?= $barang; ?> Hampir Habis
                                 </div>
 
                             <?php
@@ -104,7 +104,7 @@ require 'cek.php';
                                         <th>Nama Barang</th>
                                         <th>Deskripsi</th>
                                         <th>Kode</th>
-                                        <th>Stock</th>
+                                        <th>Stok</th>
                                         <th>Harga Satuan</th>
                                         <th>Aksi</th>
 
@@ -268,7 +268,7 @@ require 'cek.php';
 
                     <div class="form-floating mb-3">
                         <input type="number" class="form-control" id="inputStock" name="stock" placeholder="Stock" required>
-                        <label for="inputStock">Stock</label>
+                        <label for="inputStock">Stok</label>
                     </div>
 
                     <div class="form-floating mb-3">

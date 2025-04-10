@@ -7,6 +7,7 @@
 // Scripts
 // 
 
+// Buka tutup sidebar
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation

@@ -1,3 +1,4 @@
+// fitur interaktif seperti search, sort, atau pagination
 window.addEventListener('DOMContentLoaded', event => {
     // Simple-DataTables
     // https://github.com/fiduswriter/Simple-DataTables/wiki
