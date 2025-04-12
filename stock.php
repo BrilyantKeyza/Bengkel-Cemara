@@ -12,7 +12,7 @@ require 'cek.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Stock Barang</title>
+    <title>Stok Barang</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@ require 'cek.php';
                         <div class="sb-sidenav-menu-heading">Perintah</div>
                         <a class="nav-link <?= ($current_page == 'stock.php') ? 'active' : '' ?>" href="stock.php">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-box"></i></div>
-                            Stock Barang
+                            Stok Barang
                         </a>
                         <a class="nav-link <?= ($current_page == 'masuk.php') ? 'active' : '' ?>" href="masuk.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-fw fa-sign-in-alt"></i></div>

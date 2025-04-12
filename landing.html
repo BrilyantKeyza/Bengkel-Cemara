@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bengkel Cemara - Spesialis Servis Motor</title>
+    <link rel="stylesheet" href="landing.css" />
+    <!-- Font Awesome untuk Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container nav-container">
+        <div class="logo">
+          <img
+            src="img/logodo 1.svg"
+            alt="Logo Bengkel Cemara"
+            class="logo-img"
+          />
+          <h1>Cemara <span>Motor</span></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home"> Home</a></li>
+            <li><a href="#layanan"> Layanan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <img
+            src="../img/background.png"
+            alt="Orang Memperbaiki Motor"
+            class="hero-image"
+          />
+          <h1>Solusi Terbaik untuk Perawatan <span>Motor </span>Anda!</h1>
+          <p>
+            Dapatkan layanan servis cepat dan terpercaya dari mekanik
+            berpengalaman dengan peralatan terbaik untuk menjaga motor Anda
+            tetap optimal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="banner">
+      <div class="text-wrapper">
+        <div class="scrolling-text">
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+
+          <!-- duplikat untuk efek loop -->
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+          <span class="text">Cemara Motor</span>
+          <img src="img/star.svg" class="separator" alt="star" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="layanan">
+      <div class="container">
+        <div class="section-header">
+          <h2>Layanan Kami</h2>
+          <p>Berbagai layanan berkualitas untuk motor kesayangan Anda</p>
+        </div>
+        <div class="service-cards">
+          <div class="card">
+            <div class="icon-container">
+              <img
+                src="img/wrench.svg"
+                alt="Perawatan Rutin"
+                class="icon-svg"
+              />
+            </div>
+            <h3>Perawatan Rutin</h3>
+            <p class="service-description">
+              Ganti oli, filter udara, pengecekan sistem pendingin, dan
+              pengereman.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon-container">
+              <img
+                src="img/wrench-setting.svg"
+                alt="Perbaikan Mesin"
+                class="icon-svg"
+              />
+            </div>
+            <h3>Perbaikan Mesin</h3>
+            <p class="service-description">
+              Overhaul dan penggantian komponen mesin.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon-container">
+              <img
+                src="img/bolt.svg"
+                alt="Perbaikan Transmisi"
+                class="icon-svg"
+              />
+            </div>
+            <h3>Perbaikan Transmisi</h3>
+            <p class="service-description">
+              Ganti kopling dan perbaikan transmisi.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon-container">
+              <img src="img/suspension.svg" alt="Suspensi" class="icon-svg" />
+            </div>
+            <h3>Suspensi</h3>
+            <p class="service-description">
+              Perbaikan shockbreaker dan komponen suspensi.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon-container">
+              <img
+                src="img/fuel.svg"
+                alt="Sistem Bahan Bakar"
+                class="icon-svg"
+              />
+            </div>
+            <h3>Sistem Bahan Bakar</h3>
+            <p class="service-description">
+              Pembersihan karburator dan pengecekan pompa bahan bakar.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon-container">
+              <img
+                src="img/gear.svg"
+                alt="Alignment & Penyeimbangan Roda"
+                class="icon-svg"
+              />
+            </div>
+            <h3>Alignment & Penyeimbangan Roda</h3>
+            <p class="service-description">
+              Penyelarasan dan penyeimbangan roda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section class="keunggulan">
+      <div class="container">
+        <div class="section-header">
+          <h2>Keunggulan Kami</h2>
+          <p>
+            Kami hadir dengan layanan terbaik dan kualitas yang bisa kamu
+            andalkan.
+          </p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <span class="feature-number">01</span>
+            <div class="feature-icon">
+              <i class="fa-solid fa-user-gear"></i>
+            </div>
+            <h3>Teknisi Berpengalaman</h3>
+            <p>
+              Dikerjakan oleh tim mekanik profesional yang telah bersertifikat
+              dan memiliki pengalaman bertahun-tahun.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-number">02</span>
+            <div class="feature-icon">
+              <i class="fa-solid fa-toolbox"></i>
+            </div>
+            <h3>Peralatan Modern</h3>
+            <p>
+              Menggunakan peralatan canggih dan teknologi terbaru untuk
+              memastikan setiap pekerjaan dilakukan dengan hasil yang presisi
+              dan efisien.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-number">03</span>
+            <div class="feature-icon">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+            <h3>Harga Transparan</h3>
+            <p>
+              Memberikan estimasi biaya di awal dengan rincian yang jelas, tanpa
+              biaya tersembunyi.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-number">04</span>
+            <div class="feature-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Garansi Layanan</h3>
+            <p>
+              Setiap layanan yang kami berikan dilengkapi dengan garansi,
+              sebagai bentuk komitmen kami terhadap kualitas dan kepuasan
+              pelanggan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="kontak">
+      <div class="container">
+        <div class="section-header">
+          <h2>Kontak Kami</h2>
+          <p>Kami siap membantu kebutuhan perawatan motor Anda</p>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="info-item">
+              <div class="icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h3>Alamat</h3>
+                <p>Jl. Gatot Subrorto No. 07, Banyumas</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </div>
+              <div>
+                <h3>Telepon</h3>
+                <p>+62 812-2834-5152</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p>cemaramtr01@gmail.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <h3>Jam Operasional</h3>
+                <p>Senin - Sabtu: 08:00 - 17:00</p>
+                <p>Minggu: 10:00 - 16:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img
+              src="img/logodo 1.svg"
+              alt="Logo Bengkel Cemara"
+              class="footer-img"
+            />
+            <h3>Bengkel Cemara</h3>
+            <p>Solusi terbaik untuk perawatan motor Anda</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Links</h3>
+            <ul>
+              <li>
+                <a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="#layanan"
+                  ><i class="fa-solid fa-angle-right"></i> Layanan</a
+                >
+              </li>
+              <li>
+                <a href="#kontak"
+                  ><i class="fa-solid fa-angle-right"></i> Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Jl. Gatot Subroto No. 07,
+              Banyumas
+            </p>
+            <p><i class="fa-solid fa-phone"></i> +62 812-2834-5152</p>
+            <p><i class="fa-solid fa-envelope"></i>cemaramtr01@gmail.com</p>
+          </div>
+          <div class="footer-social">
+            <h3>Sosial Media</h3>
+            <div class="social-icons">
+              <a href="mailto:christianwijaya339@gmail.com" class="social-icon"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/cemara_motorbms/"
+                class="social-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://wa.me/6281228345152" class="social-icon"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Bengkel Cemara. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

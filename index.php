@@ -83,7 +83,7 @@ $ambildata = mysqli_query($conn, $query);
                         <div class="sb-sidenav-menu-heading">Perintah</div>
                         <a class="nav-link <?= ($current_page == 'stock.php') ? 'active' : '' ?>" href="stock.php">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-box"></i></div>
-                            Stock Barang
+                            Stok Barang
                         </a>
                         <a class="nav-link <?= ($current_page == 'masuk.php') ? 'active' : '' ?>" href="masuk.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-fw fa-sign-in-alt"></i></div>
@@ -107,7 +107,6 @@ $ambildata = mysqli_query($conn, $query);
 
                     <div class="row">
 
-                        <!-- Kartu Jumlah Barang -->
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
                                 <div class="card-body d-flex align-items-center justify-content-between">
@@ -121,7 +120,6 @@ $ambildata = mysqli_query($conn, $query);
                             </div>
                         </div>
 
-                        <!-- Kartu Jumlah Barang Masuk -->
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-warning text-white mb-4">
                                 <div class="card-body d-flex align-items-center justify-content-between">

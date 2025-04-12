@@ -50,7 +50,7 @@ require 'cek.php';
                         <div class="sb-sidenav-menu-heading">Perintah</div>
                         <a class="nav-link <?= ($current_page == 'stock.php') ? 'active' : '' ?>" href="stock.php">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-box"></i></div>
-                            Stock Barang
+                            Stok Barang
                         </a>
                         <a class="nav-link <?= ($current_page == 'masuk.php') ? 'active' : '' ?>" href="masuk.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-fw fa-sign-in-alt"></i></div>
