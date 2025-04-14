@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $queryJumlahDataKeluar);
 $row = mysqli_fetch_assoc($result);
 $jumlahDataKeluar = $row['total_data_keluar'];
 
-// Query untuk mengambil data dari ketiga tabel dengan format seragam
+// Query untuk mengambil data dari ketiga tabel
 $query = "
     SELECT 'Barang Masuk' AS aktivitas, m.tanggal, s.namabarang, m.qty AS jumlah, m.keterangan AS detail
     FROM barangmasuk m
